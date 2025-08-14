@@ -1,13 +1,28 @@
 package com.todolistmanager;
 
 public class Task {
-    String title;
-    String description;
-    boolean completed;
+    private String description;
+    private boolean completed;
 
-    public Task(String title, String description) {
-        this.title = title;
+    public Task(String description) {
         this.description = description;
         this.completed = false;
+    }
+
+    public void markAsCompleted() {
+        this.completed = true;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    @Override
+    public String toString() {
+        return description + (completed ? " (Completed)" : " (Pending)");
     }
 }
